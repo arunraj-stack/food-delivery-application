@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { restaurantMockData } from '../data/restaurant-mock-data';
-import { Restaurant } from '../models/Restaurant';
+import { restaurantMockData } from 'src/app/data/restaurant-mock-data';
+import { Restaurant } from 'src/app/models/Restaurant';
 
 @Injectable({
   providedIn: 'root', // This makes the service a Singleton

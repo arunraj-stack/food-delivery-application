@@ -1,37 +1,55 @@
 <div class="container">
-    <h1>Restaurant and Menu Search</h1>
-  
-    <div class="search-form">
+  <h1>Restaurant and Menu Search</h1>
+
+  <div class="search-form">
+    <form [formGroup]="searchForm">
       <div class="form-group">
         <label for="searchType">Search by:</label>
-        <select id="searchType" [(ngModel)]="searchType">
+        <select id="searchType" formControlName="searchType">
           <option value="restaurant">Restaurant Name</option>
           <option value="menu">Menu Name</option>
         </select>
+        <div class="validation-message" *ngIf="isFormSubmitted && searchForm.get('searchType')?.hasError('required')">
+          Please select a search option.
+        </div>
       </div>
   
-      <div class="form-group">
-        <label for="searchTerm">Search Term:</label>
-        <input type="text" id="searchTerm" [(ngModel)]="searchTerm" />
+      <div class="form-group" *ngIf="searchForm.get('searchType')?.value === 'restaurant'">
+        <label for="restaurantName">Restaurant Name:</label>
+        <input type="text" id="restaurantName" formControlName="restaurantName" required />
+        <div class="validation-message" *ngIf="isFormSubmitted && searchForm.get('restaurantName')?.hasError('restaurantNameRequired')">
+          Restaurant name is required.
+        </div>
+      </div>
+  
+      <div class="form-group" *ngIf="searchForm.get('searchType')?.value === 'menu'">
+        <label for="menuSelection">Select Menu:</label>
+        <select id="menuSelection" formControlName="menuSelection">
+          <option value="" disabled>Select Menu</option>
+          <option *ngFor="let menuItem of menuDetails" [value]="menuItem.id">{{ menuItem.name }}</option>
+        </select>
+        <div class="validation-message" *ngIf="isFormSubmitted && searchForm.get('menuSelection')?.hasError('menuSelectionRequired')">
+          Menu selection is required.
+        </div>
       </div>
   
       <button (click)="search()">Search</button>
-    </div>
-  
-    <div class="search-results" *ngIf="restaurants.length > 0">
-      <h2>Search Results</h2>
-      <ul>
-        <li *ngFor="let restaurant of restaurants">
-          <h2>{{ restaurant.name }}</h2>
-          <p><strong>Address:</strong> {{ restaurant.address }}</p>
-          <ul>
-            <li *ngFor="let menu of restaurant.menus">
-              <p><strong>Menu Name:</strong> {{ menu.name }}</p>
-              <p><strong>Price:</strong> ${{ menu.price }}</p>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+    </form>
   </div>
-  
+
+  <div class="search-results" *ngIf="restaurants.length > 0">
+    <h2>Search Results</h2>
+    <ul>
+      <li *ngFor="let restaurant of restaurants">
+        <h2>{{ restaurant.name }}</h2>
+        <p><strong>Address:</strong> {{ restaurant.address }}</p>
+        <ul>
+          <li *ngFor="let menu of restaurant.menus">
+            <p><strong>Menu Name:</strong> {{ menu.name }}</p>
+            <p><strong>Price:</strong> ${{ menu.price }}</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

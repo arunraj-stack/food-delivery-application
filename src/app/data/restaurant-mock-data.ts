@@ -5,19 +5,29 @@ export const restaurantMockData = [
     address: '123 Main Street',
     menus: [
       {
-        id: 101,
-        name: 'Breakfast Delight',
-        price: 10.99,
+        id: 104,
+        name: 'NAAN',
+        price: 4.99,
       },
       {
-        id: 102,
-        name: 'Lunch Combo',
-        price: 12.99,
+        id: 105,
+        name: 'PIZZA',
+        price: 8.99,
       },
       {
-        id: 103,
-        name: 'Dinner Feast',
-        price: 9.99,
+        id: 106,
+        name: 'VEG DRY MASALA',
+        price: 7.99,
+      },
+      {
+        id: 107,
+        name: 'BURGER',
+        price: 5.99,
+      },
+      {
+        id: 108,
+        name: 'FRENCH FRIES',
+        price: 3.99,
       },
     ],
   },
@@ -28,12 +38,12 @@ export const restaurantMockData = [
     menus: [
       {
         id: 201,
-        name: 'Steak Supreme',
+        name: 'BURGER',
         price: 14.99,
       },
       {
         id: 202,
-        name: 'Seafood Extravaganza',
+        name: 'FRENCH FRIES',
         price: 11.99,
       },
     ],
@@ -45,7 +55,7 @@ export const restaurantMockData = [
     menus: [
       {
         id: 301,
-        name: 'Chefs Special',
+        name: 'PIZZA',
         price: 15.99,
       },
     ],

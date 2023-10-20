@@ -12,6 +12,11 @@
     font-size: 24px;
     margin-bottom: 20px;
   }
+
+  .validation-message {
+    color: red;
+    font-size: 14px; 
+  }
   
   .search-form {
     display: flex;
