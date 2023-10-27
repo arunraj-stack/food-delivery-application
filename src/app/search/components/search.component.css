@@ -1,10 +1,19 @@
 .container {
-    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-image: url('https://png.pngtree.com/background/20210711/original/pngtree-food-poster-background-material-picture-image_1101595.jpg'); /* Set the background image here */
+    background-size: cover; /* Adjust the background size to cover the entire container */
+    background-position: center; /* Center the background image */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #f7f7f7;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    min-height: 100vh;
+    background-attachment: fixed;
+    color: #000; 
+    overflow: hidden;
   }
   
   h1 {
@@ -66,7 +75,7 @@
     margin-bottom: 10px;
   }
   
-  ul {
+  /* ul {
     list-style: none;
     padding: 0;
   }
@@ -76,11 +85,128 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    background-color: #fff;
+    background-color: #f1f1f1;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+  } */
   
   strong {
     font-weight: bold;
   }
-  
+
+ /* CSS for styling the search results */
+.search-results {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* CSS for styling the restaurant list */
+.restaurant-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* CSS for styling each restaurant item */
+.restaurant-item {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* CSS for styling the restaurant name */
+.restaurant-name {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+/* CSS for styling the restaurant address */
+.restaurant-address {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+/* CSS for styling the menu list */
+.menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* CSS for styling each menu item */
+.menu-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+/* CSS for styling the menu image */
+.menu-image-small {
+  width: 80px; /* Adjust the size as needed */
+  height: 80px; /* Adjust the size as needed */
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover; /* Ensure the image fills the circular container */
+  margin-right: 10px;
+}
+
+/* CSS for styling the menu name */
+.menu-name {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+
+/* CSS for styling the menu price */
+.menu-price {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+/* Styling for the menu name and price */
+.menu-item-content {
+  display: flex;
+  align-items: center;
+}
+
+.menu-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.menu-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-details {
+  display: flex;
+  flex-direction: column; /* Stack menu name and price vertically */
+}
+
+.menu-name {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.menu-price {
+  font-size: 14px;
+  color: #666;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.menu-item:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+  transition: background-color 0.3s; /* Add a smooth transition */
+}

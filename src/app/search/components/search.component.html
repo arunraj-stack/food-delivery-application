@@ -38,18 +38,26 @@
   </div>
 
   <div class="search-results" *ngIf="restaurants.length > 0">
-    <h2>Search Results</h2>
-    <ul>
-      <li *ngFor="let restaurant of restaurants">
-        <h2>{{ restaurant.name }}</h2>
-        <p><strong>Address:</strong> {{ restaurant.address }}</p>
-        <ul>
-          <li *ngFor="let menu of restaurant.menus">
-            <p><strong>Menu Name:</strong> {{ menu.name }}</p>
-            <p><strong>Price:</strong> ${{ menu.price }}</p>
+    <h2 class="search-results-heading">Search Results</h2>
+    <ul class="restaurant-list">
+      <li class="restaurant-item" *ngFor="let restaurant of restaurants">
+        <h2 class="restaurant-name">{{ restaurant.name }}</h2>
+        <p class="restaurant-address"><strong>Address:</strong> {{ restaurant.address }}</p>
+        <ul class="menu-list">
+          <li class="menu-item" *ngFor="let menu of restaurant.menus">
+            <div class="menu-item-content">
+              <div class="menu-image">
+                <img class="menu-image-small menu-image-circle" src="../../../assets/images/{{menu.imageSrc}}" alt="{{ menu.name }}" />
+              </div>
+              <div class="menu-details">
+                <p class="menu-name"> {{ menu.name }}</p>
+                <p class="menu-price">Price: ${{ menu.price }}</p>
+              </div>
+            </div>
           </li>
         </ul>
       </li>
     </ul>
   </div>
+  
 </div>
